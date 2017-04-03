@@ -108,7 +108,7 @@ class EmailBot(eu.ping_room.PingRoom, eu.chat_room.ChatRoom, longmessage_room.Lo
             match = EuphUtils.command('leave', self.nickname).match(command)
             if match:
                 self.send_chat('I can\'t leave this room because &%s is my primary room. Sorry.\n'
-                               'If you\'d like me to move elsewhere, send %s a message. Perhaps through this bot!' % (EuphUtils.mention(self.for_user), self.room_name), msg_id)
+                               'If you\'d like me to move elsewhere, send %s a message. Perhaps through this bot!' % (self.room_name, EuphUtils.mention(self.for_user)), msg_id)
             # !restart @nickname
             match = EuphUtils.command('restart', self.nickname).match(command)
             if match:
